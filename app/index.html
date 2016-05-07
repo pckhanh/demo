@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="/static/application.css"/>
 </head>
 
-<body>
+<body ng-app="demoApp" ng-controller="demoAppCtrl">
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,15 +81,21 @@
 <div class="jumbotron">
   <h1>Hello, world!</h1>
   <p>This is a demo project. You are gonna love it.</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <p>You are running in environment <q>{{environment}}</q>.</p>
+
+  <p>Please input your name: <form class="form-inline"><input ng-model="name" class="form-control"></form></p>
+  <p><a class="btn btn-primary btn-lg" role="button"
+        ng-click="sayHi()">Greet</a></p>
 </div>
 </div>
 <section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script src="/static/application.js"></script> 
 </section>
 </body>
 </html>

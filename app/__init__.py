@@ -2,7 +2,7 @@
 
 import os
 
-from flask import Flask, send_file
+from flask import Flask, send_file, jsonify
 
 from config import config
 
@@ -18,5 +18,9 @@ def create_app(config_name):
 	@app.route('/favicon.ico')
 	def favicon():
 		return send_file(os.path.join(os.path.dirname(__file__), 'favicon.ico'))
+
+	@app.route('/whoami')
+	def whoami():
+		return jsonify(message=os.environ.get('AWS_ENV', 'unknown'))
 
 	return app
