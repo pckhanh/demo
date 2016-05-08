@@ -9,11 +9,10 @@ app.run(function($rootScope, $http) {
 })
 app.controller('demoAppCtrl', function($scope, $http, $window) {
 	$scope.name = '';
+	$scope.getMessage = function() {
+		return /^\s*$/.test($scope.name) ? 'Hello' : ('Hi, ' + $scope.name);
+	}
 	$scope.sayHi = function() {
-		if (/^\s*$/.test($scope.name)) {
-			$window.alert('Hello');
-		} else {
-			$window.alert('Hi, ' + $scope.name);
-		}
+		$window.alert($scope.getMessage());
 	};
 });
